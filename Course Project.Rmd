@@ -5,7 +5,7 @@ date: "8/20/2020"
 output: html_document
 ---
 ### 1. Code for reading in the dataset and/or processing the data
-Lets get the data in here and load some packages
+Lets get the data in here and load some packages.
 ```{r}
 # 1. Code for reading in the dataset and/or processing the data
 if (!file.exists("activity.csv")) {
@@ -17,7 +17,7 @@ library(gridExtra)
 ```
 
 ### 2. Histogram of the total number of steps taken each day
-Here I use the Dplyr package to summarize the total steps taken by date and then plot the distribution on a histogram using ggplot
+Here I use the Dplyr package to summarize the total steps taken by date and then plot the distribution on a histogram using ggplot.
 ```{r}
 daily_steps <- ped_data %>% group_by(date) %>% summarize(daily_steps_sum = sum(steps, na.rm = T))
 total_step_distribution <- ggplot(daily_steps, aes(daily_steps_sum)) + geom_histogram(bins = 20) 
